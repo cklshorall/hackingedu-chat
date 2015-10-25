@@ -41,7 +41,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.use(cookieParser())
+//app.use(cookieParser())
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -131,7 +131,7 @@ function matching() {
     if (willing.length && needing.length) {
         console.log('inside matching if')
         client.messages.create({
-        body: 'https://hangouts.google.com/call/2wcdvtgmg33ijmhv53ummfarlma', 
+        body: 'https://hangouts.google.com/call/ixzwjlfdygyfnu2kx7hqqgbzyya or text ' + needing[0], 
         to: willing[0],
         from:'+14125203533', 
     },
@@ -140,7 +140,7 @@ function matching() {
         console.log(message);
 })
         client.messages.create({
-        body: 'https://hangouts.google.com/call/2wcdvtgmg33ijmhv53ummfarlma', 
+        body: 'https://hangouts.google.com/call/ixzwjlfdygyfnu2kx7hqqgbzyya or text ' + willing[0], 
         to: needing[0],
         from:'+14125203533', 
     },
